@@ -3,7 +3,7 @@ WORKDIR /app
 COPY Cargo.toml Cargo.lock ./
 COPY src ./src
 COPY static ./static
-RUN cargo build --release --locked
+RUN cargo build --release
 
 FROM debian:bookworm-slim
 WORKDIR /app
