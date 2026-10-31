@@ -1,7 +1,8 @@
 use std::{env, net::SocketAddr, sync::Arc, time::Duration};
 
 use anyhow::Context;
-use argon2::{password_hash::{rand_core::OsRng, PasswordHash, PasswordHasher, PasswordVerifier, SaltString}, Argon2};
+use argon2::{password_hash::{PasswordHash, PasswordHasher, PasswordVerifier, SaltString}, Argon2};
+use rand_core::OsRng;
 use axum::{
     extract::{Path, State},
     http::{header, HeaderMap, HeaderValue, StatusCode},
